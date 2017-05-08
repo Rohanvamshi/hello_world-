@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int main()
+{
+
+    int i,size,j,k,testcase,count=0;
+    printf("enter the test size\n");
+    scanf("%d",&testcase);
+    int temp[200]={0};
+    j=testcase;
+    while(testcase!=0)
+    {
+    printf("enter the size of array\n");
+    scanf("%d",&size);
+    char a[size];
+        for(i=0;i<size;i++)
+    {
+     scanf(" %c",&a[i]);
+    }
+        for(i=0;i<size;i++)
+        {
+            if(isdigit(a[i]))
+            { temp[testcase]=temp[testcase]+1;
+                for(k=i;k<size;k++)
+                {
+                   if(isdigit(a[i]))
+                    count++;
+                   else
+                    break;
+                i=k;
+                }
+            }
+
+
+
+        }
+        testcase--;
+
+    }
+    for(i=j;i>0;i--)
+    printf("%d\n",temp[i]);
+
+
+return 0;
+}
